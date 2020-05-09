@@ -12,3 +12,5 @@ aws s3 rb s3://buck --force
 //tee
 //https://stackoverflow.com/questions/2559076/how-do-i-redirect-output-to-a-variable-in-shell
  //aws s3 ls |cut -c 20-1000 |xargs echo ( read varr ; echo $varr )
+//KO listt= $(aws s3 ls |cut -c 20-1000 )
+aws s3 ls |cut -c 20-1000 >listt ;for filee in $(`cat  $listt`) do  echo $filename ; done
