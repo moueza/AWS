@@ -13,6 +13,7 @@ alternative to bash : sed awk*/
 //https://stackoverflow.com/questions/2559076/how-do-i-redirect-output-to-a-variable-in-shell
  //aws s3 ls |cut -c 20-1000 |xargs echo ( read varr ; echo $varr )
 //KO listt= $(aws s3 ls |cut -c 20-1000 )
- aws s3 ls |cut -c 20-1000 >listt ; for f in $(cat listt); do aws s3 rm s3://$f --recursive ; done
+ aws s3 ls |cut -c 20-1000 >listt ; for f in $(cat listt); do aws s3 rm s3://$f --recursive ; done ; rm listt
+ aws s3 ls |cut -c 20-1000 >listt ; for f in $(cat listt); do aws s3 rb s3://$f  ; done ; rm listt
 
 
